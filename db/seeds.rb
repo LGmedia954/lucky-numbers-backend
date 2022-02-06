@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+User.create(username: "Test", email: "nymph33019@yahoo.com")
+
+Round.create(title: "Lottery", pick_one: 1, pick_two: 2, pick_three: 3, pick_four: 4, pick_five: 5, pick_six: 6)
+
+UserRound.create(round_id: 1, user_id: 1)

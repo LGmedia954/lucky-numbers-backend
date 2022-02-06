@@ -10,7 +10,7 @@ To use this app, clone the Front End repository and run npm install to install N
 
 Clone the Back End repository and run bundle install to install necessary gems. Run rake db:migrate and rake db:seed to populate the database.
 
-Run rake start to launch the client and API servers. Navigate to http://localhost:3000 to view the React app.
+Run rake start to launch the client and API servers. Navigate to http://localhost:3001 to view the React app.
 
 # Project Requirements
 

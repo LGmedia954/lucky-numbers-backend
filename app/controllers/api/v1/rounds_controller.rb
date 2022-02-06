@@ -23,6 +23,13 @@ class Api::V1::RoundsController < ApplicationController
     end
   end
 
+  def destroy
+    round = Round.find(params[:id])
+    round.destroy
+
+    render json: {message: "Player round deleted"}, status: :accepted
+  end
+
   private
 
   def round_params
