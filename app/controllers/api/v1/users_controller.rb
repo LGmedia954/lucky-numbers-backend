@@ -2,6 +2,11 @@ class Api::V1::UsersController < ApplicationController
   # before_action :require_logged_in
   # skip_before_action :require_logged_in, only: [:new, :create]
 
+  def index
+    users = User.all
+    render json: UserSerializer.new(users)
+  end
+  
   def show
     @user = User.find(params[:id])
     options = {include: [:user_rounds]}
