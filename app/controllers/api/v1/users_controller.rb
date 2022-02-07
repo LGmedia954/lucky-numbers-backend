@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+  # before_action :require_logged_in
+  # skip_before_action :require_logged_in, only: [:new, :create]
 
   def show
     @user = User.find(params[:id])
@@ -49,7 +51,7 @@ class Api::V1::UsersController < ApplicationController
       @user.update(user_params)
       if @user.save
         render json: {
-          status: :updated,
+          status: :accepted,
           user: @user
         }
       else 

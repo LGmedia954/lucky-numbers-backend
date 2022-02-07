@@ -1,7 +1,7 @@
 class Api::V1::RoundsController < ApplicationController
 
   def index
-    rounds = Round.all
+    rounds = Round.all.recent
     render json: RoundSerializer.new(rounds)
   end
 
@@ -10,14 +10,21 @@ class Api::V1::RoundsController < ApplicationController
     render json: round
   end
 
+  def new
+    user = User.find(params[:user_id])
+    round = current_user.rounds.new
+  end
+
   def create
-    round = Round.new(round_params)
+    user = User.find(params[:user_id])
+    round = current_user.rounds.build(round_params)
 
     if round.save
       render json: RoundSerializer.new(round), status: :accepted
     else
+      # round.save
       render json: {
-        status: 500,
+        status: 422,
         errors: round.errors.full_messages
       }
     end
@@ -27,7 +34,9 @@ class Api::V1::RoundsController < ApplicationController
     round = Round.find(params[:id])
     round.destroy
 
-    render json: {message: "Player round deleted"}, status: :accepted
+    render json: {
+      status: 200
+    }
   end
 
   private
