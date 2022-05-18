@@ -10,8 +10,6 @@ Rails.application.routes.draw do
         resources :rounds, only: [:index, :show, :create, :destroy]
       end
 
-      resources :users
-
     end
   end
 end

@@ -277,3 +277,56 @@ Started GET "/api/v1/user_rounds" for ::1 at 2022-05-17 21:59:36 -0400
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/user_rounds"):
   
+Started GET "/api/v1/users" for ::1 at 2022-05-18 09:51:10 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/controllers/api/v1/users_controller.rb:76: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/users_controller.rb:76: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/v1/users_controller.rb:76: syntax error, unexpected end, expecting end-of-input
+Started GET "/api/v1/users" for ::1 at 2022-05-18 09:51:44 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 2574)
+
+
+Started GET "/api/v1/games" for ::1 at 2022-05-18 09:51:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/games"):
+  
+Started GET "/api/v1/rounds" for ::1 at 2022-05-18 09:52:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/rounds"):
+  
+Started GET "/api/v1/rounds/index" for ::1 at 2022-05-18 09:52:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/rounds/index"):
+  
+Started GET "/api/v1/user/rounds/index" for ::1 at 2022-05-18 09:52:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/rounds/index"):
+  
+Started GET "/api/v1/user/rounds/index" for ::1 at 2022-05-18 09:53:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/rounds/index"):
+  
+Started GET "/api/v1/user/rounds/index" for ::1 at 2022-05-18 09:53:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user/rounds/index"):
+  
+Started GET "/api/v1/rounds" for ::1 at 2022-05-18 09:53:53 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  [1m[36mRound Load (2.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 1.1ms | ActiveRecord: 7.8ms | Allocations: 2384)
+
+
+Started GET "/api/v1/users/:user_id/rounds" for ::1 at 2022-05-18 09:57:30 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 2000)
+
+
