@@ -1,7 +1,5 @@
 # Lucky Numbers - Backend
 
-Frontend under reconstruction for JavaScript.
-
 Users can mouse action to pick and save up to six lucky numbers.
 
 # How To Use This Application

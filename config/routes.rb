@@ -7,10 +7,6 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :create, :edit, :update]
       resources :rounds, only: [:index, :show, :create, :destroy]
 
-      post '/login', to: 'sessions#create'
-      delete '/logout', to: 'sessions#destroy'
-      get '/logged_in', to: 'sessions#is_logged_in?'
-
     end
   end
 end
