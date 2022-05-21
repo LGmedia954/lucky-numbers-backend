@@ -603,3 +603,28 @@ Started GET "/users" for ::1 at 2022-05-18 20:48:55 -0400
   
 ActionController::RoutingError (No route matches [GET] "/users"):
   
+Started GET "/users" for ::1 at 2022-05-21 10:25:52 -0400
+  [1m[35m (19.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-21 10:26:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-21 10:29:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-21 10:30:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-21 10:31:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-21 10:35:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
