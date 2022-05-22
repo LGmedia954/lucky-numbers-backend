@@ -1,36 +1,49 @@
 class Api::V1::RoundsController < ApplicationController
-  before_action :set_round, only: [:show, :update, :destroy]
+  before_action :set_round, only: [:show, :destroy]
 
   # GET /rounds
   def index
     @rounds = Round.all.recent
 
-    render json: @rounds
+    # render json: @rounds
+    render json: RoundSerializer.new(@rounds)
   end
 
   # GET /rounds/1
   def show
-    render json: @round
+    # render json: @round
+    @user = User.find(params[:email])
+    options = {include: [:user_rounds]}
+   
+    round_json = RoundSerializer.new(@round).serialized_json
+    render json: round_json
   end
 
   # POST /rounds
   def create
-    @round = Round.new(round_params)
+    @round = User.round.build(round_params)
 
     if @round.save
-      render json: RoundSerializer.new(round), status: :accepted
+      render json: RoundSerializer.new(@round), status: :created
     else
       # round.save
-      render json: {
-        status: 422,
-        errors: round.errors.full_messages
+      resp = {
+        error: @round.errors.full_messages.to_sentence
       }
+      render json: resp, status: :unprocessable_entity
     end
   end
 
   # DELETE /rounds/1
   def destroy
-    @round.destroy
+    # @round.destroy 
+    @user = User.find(params[:email])
+
+    if @round.destroy
+      render json: RoundSerializer.new(@round)
+    else
+      render json: { errors: @rounds.errors.full_messages }
+    end
   end
 
   private
