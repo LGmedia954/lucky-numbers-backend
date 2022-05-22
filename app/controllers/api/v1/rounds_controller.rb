@@ -1,7 +1,6 @@
 class Api::V1::RoundsController < ApplicationController
   before_action :set_round, only: [:show, :destroy]
 
-  # GET /rounds
   def index
     @rounds = Round.all.recent
 
@@ -9,7 +8,6 @@ class Api::V1::RoundsController < ApplicationController
     render json: RoundSerializer.new(@rounds)
   end
 
-  # GET /rounds/1
   def show
     # render json: @round
     @user = User.find(params[:email])
@@ -19,7 +17,6 @@ class Api::V1::RoundsController < ApplicationController
     render json: round_json
   end
 
-  # POST /rounds
   def create
     @round = User.round.build(round_params)
 
@@ -34,7 +31,6 @@ class Api::V1::RoundsController < ApplicationController
     end
   end
 
-  # DELETE /rounds/1
   def destroy
     # @round.destroy 
     @user = User.find(params[:email])
