@@ -4,15 +4,14 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: UserSerializer.new(@users)
+    render json: @users
   end
   
   def show
-    @user = User.find(params[:email])
+    @user = User.find(params[:id])
     options = {include: [:user_rounds]}
    
-    user_json = UserSerializer.new(@user).serialized_json
-    render json: user_json
+    render json: @user
   end
 
   def create
@@ -29,7 +28,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:email])
+    @user = User.find(params[:id])
 
     if @user.update(user_params)
       render json: @user
@@ -39,7 +38,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:email])
+    @user = User.find(params[:id])
 
     if @user.destroy
       render json: UserSerializer.new(@user)
@@ -51,7 +50,7 @@ class Api::V1::UsersController < ApplicationController
   private
 
     def set_user
-      @user = User.find(params[:email])
+      @user = User.find(params[:id])
     end
       
     def user_params

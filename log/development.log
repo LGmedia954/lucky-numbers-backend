@@ -1955,3 +1955,620 @@ ActionController::RoutingError (No route matches [GET] "/rounds"):
   [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUserRound Load (0.4ms)[0m  [1m[34mSELECT "user_rounds".* FROM "user_rounds" ORDER BY "user_rounds"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users" for ::1 at 2022-05-23 14:38:33 -0400
+Started GET "/rounds" for ::1 at 2022-05-23 14:38:33 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/rounds"):
+  
+Started GET "/rounds" for ::1 at 2022-05-23 14:38:51 -0400
+Started GET "/users" for ::1 at 2022-05-23 14:38:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rounds"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-05-23 14:39:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/rounds" for ::1 at 2022-05-23 14:39:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rounds"):
+  
+Started GET "/users" for ::1 at 2022-05-23 14:39:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/rounds" for ::1 at 2022-05-23 14:39:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rounds"):
+  
+Started POST "/users" for ::1 at 2022-05-23 14:45:23 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:02:10 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:02:10 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 14.8ms | Allocations: 8006)
+
+
+  
+NoMethodError (undefined method `user_round_ids' for #<User id: 1, email: "lgworldcom@gmail.com", username: "Test">):
+  
+app/controllers/api/v1/users_controller.rb:7:in `index'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (56.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:8:in `index'
+Completed 200 OK in 60ms (Views: 1.0ms | ActiveRecord: 108.9ms | Allocations: 1110)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:02:56 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms | Allocations: 2038)
+
+
+  
+NoMethodError (undefined method `user_round_ids' for #<User id: 1, email: "lgworldcom@gmail.com", username: "Test">):
+  
+app/controllers/api/v1/users_controller.rb:7:in `index'
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:05:40 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 3.4ms | Allocations: 6304)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-05-23 15:05:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:06:27 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as HTML
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 1.7ms | Allocations: 5010)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:06:45 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:06:45 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (4.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 4.3ms | Allocations: 2553)
+
+
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 14.5ms | Allocations: 2218)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:06:47 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:06:47 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1190)
+
+
+  [1m[36mRound Load (3.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 3.3ms | Allocations: 1515)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:19:21 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:19:21 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 164ms (Views: 164.0ms | ActiveRecord: 24.6ms | Allocations: 4680)
+
+
+Completed 200 OK in 170ms (Views: 1.7ms | ActiveRecord: 24.7ms | Allocations: 6248)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 15:19:26 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:19:26 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1111)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.5ms | Allocations: 1418)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-23 15:20:08 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hns69@aol.com", "username"=>"Test"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hns69@aol.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "hns69@aol.com"], ["username", "Test"]]
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (54.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 55.8ms | Allocations: 7801)
+
+
+  
+NoMethodError (undefined method `user_round_ids' for #<User id: 2, email: "hns69@aol.com", username: "Test">):
+  
+app/controllers/api/v1/users_controller.rb:22:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-05-23 15:20:58 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 701)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3930086755401963030)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserRefToRounds (20220523200013)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (95.4ms)[0m  [1m[35mALTER TABLE "rounds" ADD "user_id" bigint[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE INDEX "index_rounds_on_user_id" ON "rounds" ("user_id")[0m
+  [1m[35m (35.9ms)[0m  [1m[35mALTER TABLE "rounds" ADD CONSTRAINT "fk_rails_113d07974c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220523200013"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (70.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3930086755401963030)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 16:17:31 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 16:17:31 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 2.9ms | ActiveRecord: 15.6ms | Allocations: 4446)
+
+
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 6.7ms | Allocations: 844)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 16:17:33 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 16:17:33 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 1251)
+
+
+  [1m[36mRound Load (1.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 1627)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 16:20:37 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 702)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 16:53:04 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 16:53:04 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 152ms (Views: 151.8ms | ActiveRecord: 48.8ms | Allocations: 5214)
+
+
+  [1m[36mRound Load (1.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 152ms (Views: 1.4ms | ActiveRecord: 45.7ms | Allocations: 5366)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 16:53:08 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 16:53:08 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (0.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1447)
+
+
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1279)
+
+
+Started GET "/api/v1/users/2" for ::1 at 2022-05-23 17:32:15 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 404 Not Found in 7ms (Allocations: 3268)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Started GET "/api/v1/users/:id" for ::1 at 2022-05-23 17:32:35 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>":id"}
+Completed 404 Not Found in 0ms (Allocations: 120)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Started GET "/api/v1/users/:id/2" for ::1 at 2022-05-23 17:32:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/:id/2"):
+  
+Started GET "/api/v1/users/:id/2" for ::1 at 2022-05-23 17:37:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/:id/2"):
+  
+Started GET "/api/v1/users/:2" for ::1 at 2022-05-23 17:37:49 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>":2"}
+Completed 404 Not Found in 0ms (Allocations: 120)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Started GET "/api/v1/users/:2" for ::1 at 2022-05-23 18:05:34 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>":2"}
+  [1m[36mUser Load (82.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (:2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 82.4ms | Allocations: 2344)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "users".* FROM "users" WHERE (:2) LIMIT $1
+                                             ^
+):
+  
+app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Started GET "/api/v1/users/:2" for ::1 at 2022-05-23 18:05:37 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>":2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (:2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 641)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "users".* FROM "users" WHERE (:2) LIMIT $1
+                                             ^
+):
+  
+app/controllers/api/v1/users_controller.rb:54:in `set_user'
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:06:23 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 3.4ms | ActiveRecord: 2.6ms | Allocations: 6355)
+
+
+Started GET "/api/v1/users/2" for ::1 at 2022-05-23 18:06:27 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 11.6ms | Allocations: 2026)
+
+
+  
+NoMethodError (undefined method `serialized_json' for #<UserSerializer:0x00007fe245b66640>
+Did you mean?  serializable_hash):
+  
+app/controllers/api/v1/users_controller.rb:14:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2022-05-23 18:06:49 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1321)
+
+
+  
+NoMethodError (undefined method `serialized_json' for #<UserSerializer:0x00007fe245469270>
+Did you mean?  serializable_hash):
+  
+app/controllers/api/v1/users_controller.rb:14:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2022-05-23 18:07:27 -0400
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 5.1ms | Allocations: 8399)
+
+
+  
+NameError (undefined local variable or method `user_json' for #<Api::V1::UsersController:0x007fac0cc57a00>
+Did you mean?  as_json):
+  
+app/controllers/api/v1/users_controller.rb:15:in `show'
+Started GET "/api/v1/users/1" for ::1 at 2022-05-23 18:07:57 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:54:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 6990)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2022-05-23 18:27:05 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:53:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 4.8ms | Allocations: 6990)
+
+
+Started GET "/api/v1/users/email" for ::1 at 2022-05-23 18:27:15 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"email"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:53:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 524)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=email):
+  
+app/controllers/api/v1/users_controller.rb:53:in `set_user'
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:29:00 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:29:00 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 925)
+
+
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (20.8ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 23ms (Views: 1.3ms | ActiveRecord: 21.8ms | Allocations: 819)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:30:50 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:30:50 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 1847)
+
+
+  [1m[36mRound Load (0.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 129ms (Views: 1.3ms | ActiveRecord: 119.6ms | Allocations: 3660)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:38:04 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:38:04 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 151ms (Views: 150.5ms | ActiveRecord: 60.6ms | Allocations: 4561)
+
+
+  [1m[36mRound Load (1.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 154ms (Views: 2.3ms | ActiveRecord: 76.3ms | Allocations: 6089)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:38:07 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:38:07 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 825)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1535)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:39:11 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:39:11 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.2ms | Allocations: 1464)
+
+
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 818)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:39:41 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:39:41 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.6ms | Allocations: 1136)
+
+
+  [1m[36mRound Load (1.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 1524)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 18:39:44 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 18:39:44 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 708)
+
+
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 4.2ms | Allocations: 1995)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 20:34:23 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 20:34:23 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (1.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 87.7ms | Allocations: 784)
+
+
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 5.8ms | Allocations: 2081)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 20:34:27 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 20:34:27 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.9ms | Allocations: 1323)
+
+
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 1651)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-23 22:07:43 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 22:07:43 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 75ms (Views: 74.8ms | ActiveRecord: 34.5ms | Allocations: 5623)
+
+
+  [1m[36mRound Load (1.9ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 69ms (Views: 0.8ms | ActiveRecord: 36.2ms | Allocations: 5364)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-23 22:07:49 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-23 22:07:49 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1636)
+
+
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1340)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2022-05-23 22:12:20 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:53:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1024)
+
+
+Started GET "/api/v1/users/" for ::1 at 2022-05-23 22:12:27 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 702)
+
+
