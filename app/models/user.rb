@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :rounds, after_save :user_id
+  has_many :rounds
 
   validates :username, presence: true
   validates :email, uniqueness: true
