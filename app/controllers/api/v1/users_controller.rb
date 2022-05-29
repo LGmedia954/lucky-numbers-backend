@@ -13,6 +13,14 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def emailcheck
+    if User.exists?(params[:email])
+      User.pluck(params[:id])
+
+      render json: @user, status: :accepted
+    end
+  end
+
   def create
     emailcheck ||= @user = User.new(user_params)
 
