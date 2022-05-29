@@ -4141,3 +4141,118 @@ SyntaxError (/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/co
   
 app/controllers/api/v1/users_controller.rb:25: syntax error, unexpected else, expecting end
 app/controllers/api/v1/users_controller.rb:25: syntax error, unexpected else, expecting end
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:06:37 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/controllers/api/v1/users_controller.rb:25: syntax error, unexpected else, expecting end
+    else
+    ^~~~):
+  
+app/controllers/api/v1/users_controller.rb:25: syntax error, unexpected else, expecting end
+app/controllers/api/v1/users_controller.rb:25: syntax error, unexpected else, expecting end
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:12:31 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 4.3ms | ActiveRecord: 3.8ms | Allocations: 6394)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:12:49 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 08:12:49 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (16.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 7.9ms | ActiveRecord: 25.5ms | Allocations: 6279)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 50ms (Views: 29.2ms | ActiveRecord: 20.2ms | Allocations: 10159)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-29 08:13:16 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hns69@aol.com", "username"=>"Howard", "id"=>"5ad364b1-6405-431a-9bb4-934ddec9a54c"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hns69@aol.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 39ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 7230)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:20:45 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 08:20:45 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 25ms (Views: 25.1ms | ActiveRecord: 19.5ms | Allocations: 4921)
+
+
+  [1m[36mRound Load (3.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 28ms (Views: 1.2ms | ActiveRecord: 22.4ms | Allocations: 5492)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-29 08:21:03 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hns69@aol.com", "username"=>"Howard", "id"=>"553715e1-926d-4d02-bb8d-8a9a65a3432a"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hns69@aol.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 2457)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:28:29 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 2.8ms | Allocations: 6393)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:28:43 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 724)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 08:28:43 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 9.7ms | Allocations: 6148)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-05-29 08:28:45 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 08:28:45 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1077)
+
+
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 1.1ms | ActiveRecord: 10.6ms | Allocations: 3766)
+
+
