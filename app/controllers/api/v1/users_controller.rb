@@ -20,7 +20,8 @@ class Api::V1::UsersController < ApplicationController
       render json: UserSerializer.new(@user), status: :created
     else
       if User.exists?(params[:id][:email])
-      @user = User.find(params[:id])
+        @user = User.find(params[:id])
+      end
     else
       resp = {
         error: @user.errors.full_messages.to_sentence
