@@ -7,6 +7,8 @@ class User < ApplicationRecord
   def emailcheck
     if User.exists?(params[:email])
       @user = User.find(params[:email])
+      
+      render json: @user
     end
   end
 

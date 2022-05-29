@@ -20,7 +20,6 @@ class Api::V1::RoundsController < ApplicationController
     if @round.save
       render json: RoundSerializer.new(@round), status: :created
     else
-      # round.save
       resp = {
         error: @round.errors.full_messages.to_sentence
       }
@@ -29,7 +28,6 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def destroy
-    # @round.destroy 
     @user = User.find(params[:id])
 
     if @round.destroy
