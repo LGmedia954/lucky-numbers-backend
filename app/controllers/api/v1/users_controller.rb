@@ -13,19 +13,25 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
+  def emailcheck
+    if @user = User.exists?(params[:email])
+      User.pluck(params[:id])
+      render json: @user, status: :ok
+    end
+  end
+
   def create
+    emailcheck
     @user = User.new(user_params)
 
     if @user.save
       render json: UserSerializer.new(@user), status: :created
     else
-      @user = User.exists?(params[:email]) && User.pluck(params[:id])
-      render json: @user, status: :ok
+      resp = {
+        error: @user.errors.full_messages.to_sentence
+      }
+      render json: resp, status: :unprocessable_entity
     end
-      # resp = {
-      #   error: @user.errors.full_messages.to_sentence
-      # }
-      # render json: resp, status: :unprocessable_entity
   end
 
   def update
