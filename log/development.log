@@ -5277,3 +5277,49 @@ Processing by Api::V1::UsersController#create as JSON
 Completed 422 Unprocessable Entity in 23ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 4352)
 
 
+Started GET "/api/v1/users" for ::1 at 2022-05-29 20:03:01 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 20:03:01 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (0.9ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 10.6ms | Allocations: 9561)
+
+
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 13.5ms | Allocations: 8229)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-05-29 20:03:04 -0400
+Started GET "/api/v1/users" for ::1 at 2022-05-29 20:03:04 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 874)
+
+
+  [1m[36mRound Load (5.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 5.6ms | Allocations: 1907)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-05-29 20:03:31 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"photog33@gmail.com", "username"=>"Victoria", "id"=>"ddd812ed-2e2c-482b-8eba-b2922a6f13b0"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "photog33@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 422 Unprocessable Entity in 22ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4352)
+
+
