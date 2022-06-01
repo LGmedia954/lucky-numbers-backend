@@ -9,7 +9,7 @@ class Api::V1::RoundsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    options = {include: [:user_rounds]}
+    # options = {include: [:user_rounds]}
    
     render json: @round
   end
