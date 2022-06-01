@@ -7235,3 +7235,475 @@ Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.9ms | Allocations: 2017)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
   [1m[36mUserRound Load (0.3ms)[0m  [1m[34mSELECT "user_rounds".* FROM "user_rounds"[0m
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 13:52:42 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-01 13:52:42 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (1.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 5.4ms | ActiveRecord: 23.3ms | Allocations: 7988)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 13:52:49 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 13:52:49 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 23.3ms | Allocations: 2106)
+
+
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 5.5ms | Allocations: 5517)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:03:07 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:03:07 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 88ms (Views: 87.7ms | ActiveRecord: 6.9ms | Allocations: 4754)
+
+
+  [1m[36mRound Load (2.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 91ms (Views: 1.1ms | ActiveRecord: 8.1ms | Allocations: 6105)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:04:04 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:04:04 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 1.2ms | Allocations: 1187)
+
+
+  [1m[36mRound Load (2.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 2.3ms | Allocations: 1659)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:05:33 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:05:33 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (48.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 69ms (Views: 20.6ms | ActiveRecord: 48.4ms | Allocations: 1187)
+
+
+  [1m[36mRound Load (16.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 84ms (Views: 1.1ms | ActiveRecord: 16.6ms | Allocations: 1627)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:06:53 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:06:53 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 1352)
+
+
+  [1m[36mRound Load (1.9ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.9ms | Allocations: 1647)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:08:11 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:08:11 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.5ms | Allocations: 746)
+
+
+  [1m[36mRound Load (4.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 62ms (Views: 1.1ms | ActiveRecord: 4.0ms | Allocations: 2082)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:09:01 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:09:01 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (2.9ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 37ms (Views: 2.0ms | ActiveRecord: 2.9ms | Allocations: 828)
+
+
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 50ms (Views: 37.4ms | ActiveRecord: 12.4ms | Allocations: 1720)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:10:04 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:10:04 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (9.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 43ms (Views: 1.6ms | ActiveRecord: 9.3ms | Allocations: 827)
+
+
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 51ms (Views: 36.9ms | ActiveRecord: 13.5ms | Allocations: 2002)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:10:31 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:10:31 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 1178)
+
+
+  [1m[36mRound Load (1.8ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 1.8ms | Allocations: 1627)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-01 14:15:01 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"hns69@aol.com", "username"=>"Howie"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Create (41.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "hns69@aol.com"], ["username", "Howie"]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 42.1ms | Allocations: 6600)
+
+
+  
+NoMethodError (undefined method `user_round_ids' for #<User id: 29, email: "hns69@aol.com", username: "Howie">):
+  
+app/controllers/api/v1/users_controller.rb:28:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:19:57 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:19:57 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 9.6ms | Allocations: 8018)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:20:05 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:20:05 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (2.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 2.3ms | Allocations: 1446)
+
+
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 3.4ms | ActiveRecord: 9.9ms | Allocations: 3098)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-01 14:20:25 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Eddie@test.com", "username"=>"Eddie"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Eddie@test.com"], ["username", "Eddie"]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 201 Created in 52ms (Views: 0.2ms | ActiveRecord: 41.3ms | Allocations: 4996)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:22:04 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:22:04 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (53.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 85ms (Views: 1.4ms | ActiveRecord: 53.0ms | Allocations: 827)
+
+
+  [1m[36mUser Load (57.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 90ms (Views: 31.7ms | ActiveRecord: 57.8ms | Allocations: 2296)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:24:53 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:24:53 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 1374)
+
+
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1510)
+
+
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/v1/users" for ::1 at 2022-06-01 14:28:13 -0400
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:28:22 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:28:22 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 10.0ms | Allocations: 2220)
+
+
+  [1m[36mRound Load (9.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 7.0ms | ActiveRecord: 33.5ms | Allocations: 5490)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:28:24 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:28:24 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (1.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 1.3ms | ActiveRecord: 1.6ms | Allocations: 827)
+
+
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 6.9ms | Allocations: 2165)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-01 14:28:53 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Frank@test.com", "username"=>"Frank"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Frank@test.com"], ["username", "Frank"]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 201 Created in 51ms (Views: 0.2ms | ActiveRecord: 42.2ms | Allocations: 4736)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:29:10 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:29:10 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1239)
+
+
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1731)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:30:13 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:30:13 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 1643)
+
+
+  [1m[36mRound Load (4.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 1.2ms | ActiveRecord: 4.5ms | Allocations: 1781)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:31:11 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:31:11 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 1.5ms | Allocations: 1332)
+
+
+  [1m[36mRound Load (4.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 4.5ms | Allocations: 1781)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:50:55 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:50:55 -0400
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 30.5ms | Allocations: 5274)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:52:17 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:52:17 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 2.4ms | ActiveRecord: 11.7ms | Allocations: 2100)
+
+
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 26ms (Views: 1.0ms | ActiveRecord: 4.2ms | Allocations: 5421)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:52:25 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:52:25 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 2.8ms | Allocations: 975)
+
+
+  [1m[36mRound Load (2.8ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 2.8ms | Allocations: 1781)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 14:54:35 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 14:54:35 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 58ms (Views: 40.7ms | ActiveRecord: 16.4ms | Allocations: 1736)
+
+
+  [1m[36mRound Load (8.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 64ms (Views: 1.0ms | ActiveRecord: 8.4ms | Allocations: 1781)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 15:01:54 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-01 15:01:54 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (5.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 7.7ms | Allocations: 7989)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 15:02:01 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 15:02:01 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 60ms (Views: 31.4ms | ActiveRecord: 30.0ms | Allocations: 2375)
+
+
+  [1m[36mRound Load (1.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 74ms (Views: 1.2ms | ActiveRecord: 10.6ms | Allocations: 5777)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-01 15:02:43 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"George@test.com", "username"=>"George"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "George@test.com"], ["username", "George"]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 201 Created in 63ms (Views: 0.2ms | ActiveRecord: 41.7ms | Allocations: 4996)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 15:03:21 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 15:03:21 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (1.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 1.2ms | Allocations: 890)
+
+
+  [1m[36mUser Load (25.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 46ms (Views: 18.1ms | ActiveRecord: 25.6ms | Allocations: 2428)
+
+

@@ -13,15 +13,15 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
-  def emailcheck
-    if @user = User.exists?(params[:email])
-      # User.pluck(params[:id])
-      render json: @user, status: :ok
-    end
-  end
+  # def emailcheck
+  #   if @user = User.exists?(params[:email])
+  #     # User.pluck(params[:id])
+  #     render json: @user, status: :ok
+  #   end
+  # end
 
   def create
-    emailcheck
+    # emailcheck
     @user = User.new(user_params)
 
     if @user.save
