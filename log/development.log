@@ -6957,3 +6957,66 @@ Completed 500 Internal Server Error in 55ms (ActiveRecord: 42.4ms | Allocations:
 NoMethodError (undefined method `user_round_ids' for #<User:0x00007fcf8137cff0>):
   
 app/controllers/api/v1/users_controller.rb:28:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 12:38:29 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-01 12:38:29 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ArgumentError (Unknown key: :optional. Valid keys are: :class_name, :anonymous_class, :primary_key, :foreign_key, :dependent, :validate, :inverse_of, :strict_loading, :autosave, :before_add, :after_add, :before_remove, :after_remove, :extend, :counter_cache, :join_table, :index_errors, :ensuring_owner_was):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 5.2ms | ActiveRecord: 44.6ms | Allocations: 7988)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-01 12:38:52 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 12:38:52 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 2.0ms | Allocations: 2474)
+
+
+  [1m[36mRound Load (1.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 57ms (Views: 1.1ms | ActiveRecord: 12.4ms | Allocations: 5893)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-01 12:39:06 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-01 12:39:06 -0400
+Processing by Api::V1::UsersController#index as JSON
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 997)
+
+
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."created_at" DESC[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1951)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-01 12:44:37 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Cathy@test.com", "username"=>"Cathy"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mUser Create (40.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Cathy@test.com"], ["username", "Cathy"]]
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:27:in `create'
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 47.0ms | Allocations: 8539)
+
+
+  
+NoMethodError (undefined method `user_round_ids' for #<User id: 25, email: "Cathy@test.com", username: "Cathy">):
+  
+app/controllers/api/v1/users_controller.rb:28:in `create'
