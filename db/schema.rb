@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_200013) do
+ActiveRecord::Schema.define(version: 2022_05_18_014208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_200013) do
     t.integer "pick_six"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_rounds_on_user_id"
   end
 
   create_table "user_rounds", force: :cascade do |t|
@@ -43,7 +41,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_200013) do
     t.string "username"
   end
 
-  add_foreign_key "rounds", "users"
   add_foreign_key "user_rounds", "rounds"
   add_foreign_key "user_rounds", "users"
 end
