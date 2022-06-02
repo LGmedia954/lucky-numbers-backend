@@ -15,7 +15,6 @@ class Api::V1::UsersController < ApplicationController
 
   # def emailcheck
   #   if @user = User.exists?(params[:email])
-  #     # User.pluck(params[:id])
   #     render json: @user, status: :ok
   #   end
   # end
