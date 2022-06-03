@@ -8,11 +8,14 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    # options = {include: [:user_rounds]}
-    @round = User.id.rounds.last
-
-    render json: @user.round
+    if @round = User.last.rounds.last
+      render json: @user.round
+    else
+      resp = {
+        error: @round.errors.full_messages.to_sentence
+      }
+      render json: resp, status: :not_found
+    end
   end
 
   def create
@@ -52,3 +55,7 @@ class Api::V1::RoundsController < ApplicationController
   end
 
 end
+
+
+
+# options = {include: [:user_rounds]}

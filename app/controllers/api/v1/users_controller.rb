@@ -8,19 +8,12 @@ class Api::V1::UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = User.last
    
     render json: @user
   end
 
-  # def emailcheck
-  #   if @user = User.exists?(params[:email])
-  #     render json: @user, status: :ok
-  #   end
-  # end
-
   def create
-    # emailcheck
     @user = User.new(user_params)
 
     if @user.save
@@ -64,3 +57,11 @@ class Api::V1::UsersController < ApplicationController
     end
 
  end
+
+
+
+  # def emailcheck
+  #   if @user = User.exists?(params[:email])
+  #     render json: @user, status: :ok
+  #   end
+  # end
