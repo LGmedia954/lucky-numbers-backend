@@ -8,14 +8,9 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def show
-    if @round = User.last.rounds.last
-      render json: @user.round
-    else
-      resp = {
-        error: @round.errors.full_messages.to_sentence
-      }
-      render json: resp, status: :not_found
-    end
+    @round = Round.last(round_params)
+   
+    render json: @round
   end
 
   def create
