@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
   end
   
   def show
-    @user = User.last
+    @user = User.last(params[:id])
    
     render json: @user
   end

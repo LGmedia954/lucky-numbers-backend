@@ -19,7 +19,7 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def create
-    @user = User.last
+    @user = User.last(params[:id])
     @round = @user.rounds.new(round_params)
    
     if @round.save
