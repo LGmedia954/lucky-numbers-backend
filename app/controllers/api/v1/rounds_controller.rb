@@ -19,9 +19,9 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
-    @round = @user.rounds.build(round_params)
-    # binding.pry
+    @user = User.last
+    @round = @user.rounds.new(round_params)
+   
     if @round.save
       render json: RoundSerializer.new(@round), status: :created
     else
