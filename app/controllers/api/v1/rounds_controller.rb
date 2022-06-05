@@ -2,20 +2,20 @@ class Api::V1::RoundsController < ApplicationController
   before_action :set_round, only: [:show, :destroy]
 
   def index
-    @rounds = Round.all.recent
+    @rounds = Round.all #.recent
 
     render json: @rounds
   end
 
   def show
-    @round = Round.last(round_params)
+    @round = Round.last(params[:id])
    
     render json: @round
   end
 
   def create
     @user = User.last(params[:id])
-    @round = @user.rounds.new(round_params)
+    @round = @user.rounds.build(round_params)
    
     if @round.save
       render json: RoundSerializer.new(@round), status: :created
@@ -46,7 +46,7 @@ class Api::V1::RoundsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def round_params
-    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six)
+    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six, user_round_attributes: [:user_id])
   end
 
 end
