@@ -14,7 +14,7 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id]
+    @user = User.find(params[:id])
     @round = @user.rounds.build(round_params)
     User.id == @user_round.user_id
    
