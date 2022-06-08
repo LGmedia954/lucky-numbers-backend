@@ -16,7 +16,7 @@ class Api::V1::RoundsController < ApplicationController
   def create
     @user = User.last(params[:id])
     @round = @user.rounds.build(round_params)
-    @user_round.user_id == User.id
+    # @user_round.user_id == User.id
    
     if @round.save
       render json: RoundSerializer.new(@round), status: :created
