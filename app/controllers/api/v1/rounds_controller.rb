@@ -2,13 +2,13 @@ class Api::V1::RoundsController < ApplicationController
   before_action :set_round, only: [:show, :destroy]
 
   def index
-    @rounds = Round.all #.recent
+    @rounds = Round.all
 
     render json: @rounds
   end
 
   def show
-    @round = Round.last(params[:id])
+    @round = Round.find(params[:id]).last
    
     render json: @round
   end

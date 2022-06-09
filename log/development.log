@@ -14666,3 +14666,230 @@ Processing by Api::V1::UsersController#show as HTML
 Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1329)
 
 
+Started GET "/api/v1/users" for ::1 at 2022-06-09 11:32:49 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 58ms (Views: 4.0ms | ActiveRecord: 44.1ms | Allocations: 6526)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-09 11:32:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/rounds" for ::1 at 2022-06-09 11:32:56 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 7.3ms | ActiveRecord: 5.6ms | Allocations: 6975)
+
+
+Started GET "/api/v1/user_rounds" for ::1 at 2022-06-09 11:33:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/user_rounds"):
+  
+Started GET "/api/v1/users/rounds" for ::1 at 2022-06-09 11:33:31 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"rounds"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Completed 404 Not Found in 18ms (ActiveRecord: 3.3ms | Allocations: 3827)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=rounds):
+  
+app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Started GET "/api/v1/users/1/rounds" for ::1 at 2022-06-09 11:34:25 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 735)
+
+
+Started GET "/api/v1/users/1/round/1" for ::1 at 2022-06-09 11:40:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/1/round/1"):
+  
+Started GET "/api/v1/users/1/rounds/1" for ::1 at 2022-06-09 11:40:56 -0400
+Processing by Api::V1::RoundsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mRound Load (0.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:46:in `set_round'
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:11:in `show'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 8.6ms | Allocations: 3518)
+
+
+Started GET "/api/v1/users/29/rounds/1" for ::1 at 2022-06-09 11:41:15 -0400
+Processing by Api::V1::RoundsController#show as HTML
+  Parameters: {"user_id"=>"29", "id"=>"1"}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:46:in `set_round'
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" ORDER BY "rounds"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:11:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1195)
+
+
+Started GET "/api/v1/users/68/rounds/" for ::1 at 2022-06-09 11:41:29 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"68"}
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 752)
+
+
+Started GET "/api/v1/users/68/" for ::1 at 2022-06-09 11:41:36 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"68"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 68], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 504)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=68):
+  
+app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Started GET "/api/v1/users/70/" for ::1 at 2022-06-09 11:41:50 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 501)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=70):
+  
+app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Started GET "/api/v1/users/2" for ::1 at 2022-06-09 11:42:03 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 500)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Started GET "/api/v1/users/" for ::1 at 2022-06-09 11:42:23 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started GET "/api/v1/users/90" for ::1 at 2022-06-09 11:42:29 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 90]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1364)
+
+
+Started GET "/api/v1/users/90" for ::1 at 2022-06-09 11:42:35 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"90"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 90]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1329)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2022-06-09 11:42:43 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1073)
+
+
+Started GET "/api/v1/users/2" for ::1 at 2022-06-09 11:42:53 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 501)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/api/v1/users_controller.rb:52:in `set_user'
+Started GET "/api/v1/users/91" for ::1 at 2022-06-09 11:45:25 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 91]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 4066)
+
+
+Started GET "/api/v1/users/91" for ::1 at 2022-06-09 11:45:36 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 91]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1329)
+
+
+Started GET "/api/v1/users/91" for ::1 at 2022-06-09 11:46:12 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 3555)
+
+
+Started GET "/api/v1/users/91/round" for ::1 at 2022-06-09 11:48:51 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/91/round"):
+  
+Started GET "/api/v1/users/91/rounds" for ::1 at 2022-06-09 11:48:56 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"91"}
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 33ms (Views: 24.5ms | ActiveRecord: 3.2ms | Allocations: 7802)
+
+
+Started GET "/api/v1/users/91/rounds/1" for ::1 at 2022-06-09 11:49:09 -0400
+Processing by Api::V1::RoundsController#show as HTML
+  Parameters: {"user_id"=>"91", "id"=>"1"}
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:46:in `set_round'
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:11:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1446)
+
+
+Started GET "/api/v1/users/91/rounds/1" for ::1 at 2022-06-09 11:49:58 -0400
+Processing by Api::V1::RoundsController#show as HTML
+  Parameters: {"user_id"=>"91", "id"=>"1"}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:46:in `set_round'
+  [1m[36mCACHE Round Load (0.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds" WHERE "rounds"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:11:in `show'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.2ms | Allocations: 8566)
+
+
+  
+NoMethodError (undefined method `last' for #<Round:0x00007fe210affa88>):
+  
+app/controllers/api/v1/rounds_controller.rb:11:in `show'
