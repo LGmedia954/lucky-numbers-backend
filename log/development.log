@@ -14557,3 +14557,112 @@ NoMethodError (undefined method `id' for User(id: integer, email: string, userna
 Did you mean?  ids):
   
 app/controllers/api/v1/rounds_controller.rb:18:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-08 23:11:14 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-08 23:11:14 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 7.1ms | Allocations: 2452)
+
+
+Completed 200 OK in 50ms (Views: 5.6ms | ActiveRecord: 44.0ms | Allocations: 12741)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-08 23:12:18 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-08 23:12:18 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 1573)
+
+
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.6ms | Allocations: 1656)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-08 23:13:03 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Eddie@test.com", "username"=>"Eddie"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Eddie@test.com"], ["username", "Eddie"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 66ms (Views: 0.2ms | ActiveRecord: 41.3ms | Allocations: 5118)
+
+
+Started POST "/api/v1/users/undefined/rounds" for ::1 at 2022-06-08 23:13:38 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"user"=>{"data"=>{"id"=>"91", "type"=>"user", "attributes"=>{"id"=>91, "email"=>"Eddie@test.com", "username"=>"Eddie"}}}, "title"=>"Test", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1"}, "user_id"=>"undefined"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 3229)
+
+
+  
+NoMethodError (undefined method `id' for User(id: integer, email: string, username: string):Class
+Did you mean?  ids):
+  
+app/controllers/api/v1/rounds_controller.rb:18:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-06-08 23:14:29 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 907)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-08 23:14:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/users/1" for ::1 at 2022-06-08 23:14:48 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1466)
+
+
+Started GET "/api/v1/users/91" for ::1 at 2022-06-08 23:15:05 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 91]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1329)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2022-06-08 23:15:15 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1074)
+
+
+Started GET "/api/v1/users/91" for ::1 at 2022-06-08 23:15:47 -0400
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:52:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 91]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1329)
+
+
