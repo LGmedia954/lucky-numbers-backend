@@ -8,16 +8,14 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def show
-    @round = Round.find(params[:id]).last
+    @round = Round.find(params[:id])
    
     render json: @round
   end
 
   def create
     @user = User.find(params[:id])
-    User.id == @user_round.user_id
     @round = @user.rounds.build(round_params)
-    
    
     if @round.save
       render json: RoundSerializer.new(@round), status: :created
