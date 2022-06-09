@@ -14125,3 +14125,142 @@ app/controllers/api/v1/rounds_controller.rb:18:in `create'
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 84]]
   [1m[36mTRANSACTION (40.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/rounds" for ::1 at 2022-06-08 18:07:48 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-08 18:07:48 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 23ms (Views: 5.5ms | ActiveRecord: 23.6ms | Allocations: 6246)
+
+
+Completed 200 OK in 38ms (Views: 2.7ms | ActiveRecord: 35.3ms | Allocations: 12742)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-08 18:08:04 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"AmyJ@test.com", "username"=>"Amy"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "AmyJ@test.com"], ["username", "Amy"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (43.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 53ms (Views: 0.2ms | ActiveRecord: 43.6ms | Allocations: 5114)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-08 18:08:05 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 706)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-08 18:08:31 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"user"=>{"data"=>{"id"=>"85", "type"=>"user", "attributes"=>{"id"=>85, "email"=>"AmyJ@test.com", "username"=>"Amy"}}}, "title"=>"Lotto", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1"}, "user_id"=>"[object Object]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:17:in `create'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.3ms | Allocations: 2835)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Round.):
+  
+app/controllers/api/v1/rounds_controller.rb:18:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (40.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 85]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-08 19:46:30 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"[object Object]"}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 36ms (Views: 25.3ms | ActiveRecord: 2.9ms | Allocations: 9825)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-06-08 19:46:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-08 19:46:41 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"[object Object]"}
+  [1m[36mRound Load (1.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 755)
+
+
+Started GET "/api/v1/users/1/rounds" for ::1 at 2022-06-08 19:47:04 -0400
+Processing by Api::V1::RoundsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 756)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-08 19:49:47 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 738)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-08 19:49:47 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 2.3ms | Allocations: 2092)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-08 19:50:19 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Amber@test.com", "username"=>"Amber"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (41.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Amber@test.com"], ["username", "Amber"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 57ms (Views: 0.2ms | ActiveRecord: 45.9ms | Allocations: 5096)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-08 19:50:19 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms | Allocations: 704)
+
+
+Started POST "/api/v1/users/undefined/rounds" for ::1 at 2022-06-08 19:52:21 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"user"=>{"data"=>{"id"=>"86", "type"=>"user", "attributes"=>{"id"=>86, "email"=>"Amber@test.com", "username"=>"Amber"}}}, "title"=>"Lotto", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1"}, "user_id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:17:in `create'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms | Allocations: 5700)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Round.):
+  
+app/controllers/api/v1/rounds_controller.rb:18:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 86]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
