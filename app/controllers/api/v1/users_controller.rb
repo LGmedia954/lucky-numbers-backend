@@ -15,8 +15,9 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-#byebug
+# byebug
     if @user.save
+      @user.id == UserRound(params[:user_id])
       render json: UserSerializer.new(@user), status: :created
     else
       resp = {
@@ -57,11 +58,3 @@ class Api::V1::UsersController < ApplicationController
     end
 
  end
-
-
-
-  # def emailcheck
-  #   if @user = User.exists?(params[:email])
-  #     render json: @user, status: :ok
-  #   end
-  # end
