@@ -4,6 +4,6 @@ class RoundSerializer
   set_type :round
   set_id :id
   
-  belongs_to :user, serializer: UserSerializer
+  belongs_to :user
 
 end

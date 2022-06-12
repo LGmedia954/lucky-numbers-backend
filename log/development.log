@@ -19333,3 +19333,57 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 34ms (Views: 13.6ms | ActiveRecord: 19.4ms | Allocations: 3469)
 
 
+Started GET "/api/v1/users" for ::1 at 2022-06-12 08:32:56 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 3.5ms | ActiveRecord: 2.9ms | Allocations: 6605)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-12 08:34:49 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-12 08:34:49 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mRound Load (2.8ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 4.6ms | Allocations: 1257)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 106ms (Views: 15.7ms | ActiveRecord: 89.6ms | Allocations: 3730)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-12 08:35:41 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Eddie@test.com", "username"=>"Eddie"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Eddie@test.com"], ["username", "Eddie"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 54ms (Views: 0.2ms | ActiveRecord: 41.8ms | Allocations: 5169)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-12 08:35:41 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 971)
+
+
+Started POST "/api/v1/users/undefined/rounds" for ::1 at 2022-06-12 08:37:16 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Lotto", "pick_one"=>"1", "pick_two"=>"2", "pick_three"=>"3", "pick_four"=>"4", "pick_five"=>"5", "pick_six"=>"6", "user_id"=>{"data"=>{"id"=>"6", "type"=>"user", "attributes"=>{"id"=>6, "email"=>"Eddie@test.com", "username"=>"Eddie"}}}}, "user_id"=>"undefined"}
+Completed 404 Not Found in 25ms (ActiveRecord: 0.0ms | Allocations: 3284)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
