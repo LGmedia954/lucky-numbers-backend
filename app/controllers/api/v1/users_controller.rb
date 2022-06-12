@@ -14,11 +14,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params[:id][:email][:username])
-    @user.id == UserRound(params[:user_id])
+    @user = User.new(user_params)
 # byebug
     if @user.save
       render json: UserSerializer.new(@user), status: :created
+      User.id == UserRound.user_id
     else
       resp = {
         error: @user.errors.full_messages.to_sentence
