@@ -18,7 +18,6 @@ class Api::V1::UsersController < ApplicationController
 # byebug
     if @user.save
       render json: UserSerializer.new(@user), status: :created
-      User.id == UserRound.user_id
     else
       resp = {
         error: @user.errors.full_messages.to_sentence
