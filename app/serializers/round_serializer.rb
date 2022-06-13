@@ -4,6 +4,6 @@ class RoundSerializer
   set_type :round
   set_id :id
   
-  belongs_to :user
+  belongs_to :user, if: Proc.new { |round, params| params && params[:id] == true }
 
 end

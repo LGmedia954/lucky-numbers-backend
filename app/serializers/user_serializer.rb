@@ -1,8 +1,6 @@
 class UserSerializer
   include JSONAPI::Serializer
   attributes :id, :email, :username
-  # set_type :user
-  # set_id :id
 
   set_id do |user, params|
     # in here, params is a hash containing the `:id` key
