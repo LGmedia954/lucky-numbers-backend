@@ -17,7 +17,8 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 # byebug
     if @user.save
-      render json: UserSerializer.new(@user), status: :created
+      render json: UserSerializer.new(@user).serializable_hash.to_json, 
+      status: :created
     else
       resp = {
         error: @user.errors.full_messages.to_sentence

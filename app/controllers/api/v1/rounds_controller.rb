@@ -20,7 +20,8 @@ class Api::V1::RoundsController < ApplicationController
     # @round = Round.new(:user_id => @user.id)
    
     if @round.save
-      render json: RoundSerializer.new(@round), status: :created
+      render json: RoundSerializer.new(@round).serializable_hash.to_json, 
+      status: :created
     else
       resp = {
         error: @round.errors.full_messages.to_sentence
