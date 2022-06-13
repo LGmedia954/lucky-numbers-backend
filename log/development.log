@@ -21112,3 +21112,637 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 978)
 
 
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 06:42:13 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:42:13 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 20.5ms | Allocations: 2972)
+
+
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (41.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 45ms (Views: 2.8ms | ActiveRecord: 49.0ms | Allocations: 2549)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:45:02 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 06:45:02 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 1972)
+
+
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1110)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 06:45:18 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Grace@test.com", "username"=>"Grace"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (43.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Grace@test.com"], ["username", "Grace"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 66ms (Views: 0.1ms | ActiveRecord: 45.4ms | Allocations: 5172)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:45:18 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1011)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:53:34 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 06:53:34 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 4.5ms | Allocations: 4819)
+
+
+Completed 200 OK in 10ms (Views: 10.2ms | ActiveRecord: 5.1ms | Allocations: 5413)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:53:46 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 06:53:46 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1447)
+
+
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 1775)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:54:35 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 06:54:35 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1589)
+
+
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1843)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 06:55:07 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Howie@test.com", "username"=>"Howie"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Howie@test.com"], ["username", "Howie"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 46ms (Views: 0.1ms | ActiveRecord: 42.1ms | Allocations: 1789)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 06:55:07 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1062)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 07:04:21 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Irena@test.com", "username"=>"Irena"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Irena@test.com"], ["username", "Irena"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 38ms (Views: 0.1ms | ActiveRecord: 27.6ms | Allocations: 3773)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 07:04:21 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1137)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-13 07:04:39 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Test", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1", "user_id"=>{"data"=>{"id"=>"user-10", "type"=>"user", "attributes"=>{"id"=>10, "email"=>"Irena@test.com", "username"=>"Irena"}}}}, "user_id"=>"[object Object]"}
+Completed 404 Not Found in 11ms (ActiveRecord: 0.0ms | Allocations: 3275)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-06-13 07:38:07 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 07:38:07 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 9.9ms | Allocations: 5993)
+
+
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 11.1ms | Allocations: 5678)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 08:31:00 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 08:31:00 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (9.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+Completed 200 OK in 85ms (Views: 84.4ms | ActiveRecord: 70.3ms | Allocations: 5310)
+
+
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 87ms (Views: 85.7ms | ActiveRecord: 59.6ms | Allocations: 6367)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 08:31:19 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 08:31:19 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.5ms | Allocations: 1119)
+
+
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.9ms | Allocations: 2383)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 08:32:54 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 08:32:54 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 1794)
+
+
+  [1m[36mRound Load (2.0ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 2.0ms | Allocations: 1912)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 08:39:23 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 08:39:23 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (1.1ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+Completed 200 OK in 72ms (Views: 71.6ms | ActiveRecord: 49.6ms | Allocations: 5307)
+
+
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 73ms (Views: 72.8ms | ActiveRecord: 44.1ms | Allocations: 6038)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 09:47:13 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 09:47:13 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+  [1m[36mRound Load (0.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+Completed 200 OK in 355ms (Views: 354.5ms | ActiveRecord: 5.9ms | Allocations: 4896)
+
+
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 357ms (Views: 356.9ms | ActiveRecord: 6.5ms | Allocations: 6398)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 09:47:13 -0400
+Processing by Api::V1::UsersController#index as JSON
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 09:47:13 -0400
+  Parameters: {"user"=>{}}
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.8ms | Allocations: 1575)
+
+
+  [1m[36mRound Load (14.9ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 21ms (Views: 5.8ms | ActiveRecord: 14.9ms | Allocations: 1947)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 09:47:35 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Joe@test.com", "username"=>"Joe"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Joe@test.com"], ["username", "Joe"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (83.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 88ms (Views: 0.1ms | ActiveRecord: 84.7ms | Allocations: 1789)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 09:47:35 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 3.7ms | Allocations: 1165)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-13 09:48:18 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Test", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1", "user_id"=>{"data"=>{"id"=>"user-11", "type"=>"user", "attributes"=>{"id"=>11, "email"=>"Joe@test.com", "username"=>"Joe"}}}}, "user_id"=>"[object Object]"}
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 130)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 09:48:18 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 616)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 10:49:00 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 10:49:00 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 8.4ms | Allocations: 745)
+
+
+Completed 200 OK in 52ms (Views: 3.2ms | ActiveRecord: 59.0ms | Allocations: 8711)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 10:50:00 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 10:50:00 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 2.7ms | Allocations: 1867)
+
+
+  [1m[36mRound Load (2.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.5ms | Allocations: 1955)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 10:50:17 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 10:50:17 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.7ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.7ms | Allocations: 687)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 1.9ms | Allocations: 2675)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 10:50:51 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 10:50:51 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1808)
+
+
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1929)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 12:24:17 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 12:24:17 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 92.3ms | Allocations: 2536)
+
+
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 46.3ms | Allocations: 713)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 12:24:57 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Kyle@test.com", "username"=>"Kyle"}}
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Kyle@test.com"], ["username", "Kyle"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 72ms (Views: 0.1ms | ActiveRecord: 53.8ms | Allocations: 3930)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 12:24:57 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1230)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-13 12:25:40 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Lotto", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1", "user_id"=>{"data"=>{"id"=>"12", "type"=>"user", "attributes"=>{"id"=>12, "email"=>"Kyle@test.com", "username"=>"Kyle"}}}}, "user_id"=>"[object Object]"}
+Completed 404 Not Found in 8ms (ActiveRecord: 0.0ms | Allocations: 3275)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 12:25:40 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 616)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 13:31:28 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:31:28 -0400
+  [1m[35m (22.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 9.0ms | Allocations: 2973)
+
+
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 10.7ms | Allocations: 2807)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 13:31:53 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Lance@test.com", "username"=>"Lance"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (40.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Lance@test.com"], ["username", "Lance"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 42.6ms | Allocations: 2105)
+
+
+  
+SyntaxError (/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/serializers/user_serializer.rb:12: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...ser.id}-#{params[:user]/rounds"
+...                              ^
+/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/serializers/user_serializer.rb:20: unterminated string meets end of file
+/Users/lesliegonzalez/Development/code/lucky-numbers-backend/app/serializers/user_serializer.rb:20: syntax error, unexpected end-of-input, expecting tSTRING_DEND):
+  
+app/serializers/user_serializer.rb:12: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/serializers/user_serializer.rb:20: unterminated string meets end of file
+app/serializers/user_serializer.rb:20: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+app/serializers/user_serializer.rb:12: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/serializers/user_serializer.rb:20: unterminated string meets end of file
+app/serializers/user_serializer.rb:20: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+app/controllers/api/v1/users_controller.rb:20:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:31:53 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 1268)
+
+
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 13:37:03 -0400
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:37:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 3.4ms | ActiveRecord: 16.1ms | Allocations: 5201)
+
+
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 11.5ms | Allocations: 730)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 13:37:30 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Maria@test.com", "username"=>"Maria"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Maria@test.com"], ["username", "Maria"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 41.7ms | Allocations: 6406)
+
+
+  
+NameError (undefined local variable or method `rounds' for UserSerializer:Class):
+  
+app/serializers/user_serializer.rb:12:in `block in <class:UserSerializer>'
+app/controllers/api/v1/users_controller.rb:20:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:37:30 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 1319)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-13 13:37:52 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Lotto", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1", "user_id"=>{"status"=>500, "error"=>"Internal Server Error", "exception"=>"#<NameError: undefined local variable or method `rounds' for UserSerializer:Class>", "traces"=>{"Application Trace"=>[{"exception_object_id"=>70220712110480, "id"=>0, "trace"=>"app/serializers/user_serializer.rb:12:in `block in <class:UserSerializer>'"}, {"exception_object_id"=>70220712110480, "id"=>10, "trace"=>"app/controllers/api/v1/users_controller.rb:20:in `create'"}], "Framework Trace"=>[{"exception_object_id"=>70220712110480, "id"=>1, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/helpers.rb:17:in `call_proc'"}, {"exception_object_id"=>70220712110480, "id"=>2, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/scalar.rb:14:in `serialize'"}, {"exception_object_id"=>70220712110480, "id"=>3, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:39:in `block in links_hash'"}, {"exception_object_id"=>70220712110480, "id"=>4, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `each'"}, {"exception_object_id"=>70220712110480, "id"=>5, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `each_with_object'"}, {"exception_object_id"=>70220712110480, "id"=>6, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `links_hash'"}, {"exception_object_id"=>70220712110480, "id"=>7, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:83:in `record_hash'"}, {"exception_object_id"=>70220712110480, "id"=>8, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/object_serializer.rb:52:in `hash_for_one_record'"}, {"exception_object_id"=>70220712110480, "id"=>9, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/object_serializer.rb:41:in `serializable_hash'"}, {"exception_object_id"=>70220712110480, "id"=>11, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'"}, {"exception_object_id"=>70220712110480, "id"=>12, "trace"=>"actionpack (6.1.6) lib/abstract_controller/base.rb:228:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>13, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>14, "trace"=>"actionpack (6.1.6) lib/abstract_controller/callbacks.rb:42:in `block in process_action'"}, {"exception_object_id"=>70220712110480, "id"=>15, "trace"=>"activesupport (6.1.6) lib/active_support/callbacks.rb:106:in `run_callbacks'"}, {"exception_object_id"=>70220712110480, "id"=>16, "trace"=>"actionpack (6.1.6) lib/abstract_controller/callbacks.rb:41:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>17, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/rescue.rb:22:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>18, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'"}, {"exception_object_id"=>70220712110480, "id"=>19, "trace"=>"activesupport (6.1.6) lib/active_support/notifications.rb:203:in `block in instrument'"}, {"exception_object_id"=>70220712110480, "id"=>20, "trace"=>"activesupport (6.1.6) lib/active_support/notifications/instrumenter.rb:24:in `instrument'"}, {"exception_object_id"=>70220712110480, "id"=>21, "trace"=>"activesupport (6.1.6) lib/active_support/notifications.rb:203:in `instrument'"}, {"exception_object_id"=>70220712110480, "id"=>22, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/instrumentation.rb:33:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>23, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>24, "trace"=>"activerecord (6.1.6) lib/active_record/railties/controller_runtime.rb:27:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>25, "trace"=>"actionpack (6.1.6) lib/abstract_controller/base.rb:165:in `process'"}, {"exception_object_id"=>70220712110480, "id"=>26, "trace"=>"actionpack (6.1.6) lib/action_controller/metal.rb:190:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>27, "trace"=>"actionpack (6.1.6) lib/action_controller/metal.rb:254:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>28, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>29, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:33:in `serve'"}, {"exception_object_id"=>70220712110480, "id"=>30, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'"}, {"exception_object_id"=>70220712110480, "id"=>31, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:32:in `each'"}, {"exception_object_id"=>70220712110480, "id"=>32, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'"}, {"exception_object_id"=>70220712110480, "id"=>33, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:842:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>34, "trace"=>"rack (2.2.3) lib/rack/etag.rb:27:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>35, "trace"=>"rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>36, "trace"=>"rack (2.2.3) lib/rack/head.rb:12:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>37, "trace"=>"activerecord (6.1.6) lib/active_record/migration.rb:601:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>38, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>70220712110480, "id"=>39, "trace"=>"activesupport (6.1.6) lib/active_support/callbacks.rb:98:in `run_callbacks'"}, {"exception_object_id"=>70220712110480, "id"=>40, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>41, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>42, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>43, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>44, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>45, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:37:in `call_app'"}, {"exception_object_id"=>70220712110480, "id"=>46, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:26:in `block in call'"}, {"exception_object_id"=>70220712110480, "id"=>47, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>70220712110480, "id"=>48, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>70220712110480, "id"=>49, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>70220712110480, "id"=>50, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>51, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>52, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>53, "trace"=>"rack (2.2.3) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>54, "trace"=>"activesupport (6.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>55, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>56, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/static.rb:24:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>57, "trace"=>"rack (2.2.3) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>58, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>59, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>60, "trace"=>"railties (6.1.6) lib/rails/engine.rb:539:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>61, "trace"=>"puma (5.6.4) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>62, "trace"=>"puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>70220712110480, "id"=>63, "trace"=>"puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>70220712110480, "id"=>64, "trace"=>"puma (5.6.4) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>70220712110480, "id"=>65, "trace"=>"puma (5.6.4) lib/puma/server.rb:441:in `process_client'"}, {"exception_object_id"=>70220712110480, "id"=>66, "trace"=>"puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}], "Full Trace"=>[{"exception_object_id"=>70220712110480, "id"=>0, "trace"=>"app/serializers/user_serializer.rb:12:in `block in <class:UserSerializer>'"}, {"exception_object_id"=>70220712110480, "id"=>1, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/helpers.rb:17:in `call_proc'"}, {"exception_object_id"=>70220712110480, "id"=>2, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/scalar.rb:14:in `serialize'"}, {"exception_object_id"=>70220712110480, "id"=>3, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:39:in `block in links_hash'"}, {"exception_object_id"=>70220712110480, "id"=>4, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `each'"}, {"exception_object_id"=>70220712110480, "id"=>5, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `each_with_object'"}, {"exception_object_id"=>70220712110480, "id"=>6, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:38:in `links_hash'"}, {"exception_object_id"=>70220712110480, "id"=>7, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/serialization_core.rb:83:in `record_hash'"}, {"exception_object_id"=>70220712110480, "id"=>8, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/object_serializer.rb:52:in `hash_for_one_record'"}, {"exception_object_id"=>70220712110480, "id"=>9, "trace"=>"jsonapi-serializer (2.2.0) lib/fast_jsonapi/object_serializer.rb:41:in `serializable_hash'"}, {"exception_object_id"=>70220712110480, "id"=>10, "trace"=>"app/controllers/api/v1/users_controller.rb:20:in `create'"}, {"exception_object_id"=>70220712110480, "id"=>11, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'"}, {"exception_object_id"=>70220712110480, "id"=>12, "trace"=>"actionpack (6.1.6) lib/abstract_controller/base.rb:228:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>13, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>14, "trace"=>"actionpack (6.1.6) lib/abstract_controller/callbacks.rb:42:in `block in process_action'"}, {"exception_object_id"=>70220712110480, "id"=>15, "trace"=>"activesupport (6.1.6) lib/active_support/callbacks.rb:106:in `run_callbacks'"}, {"exception_object_id"=>70220712110480, "id"=>16, "trace"=>"actionpack (6.1.6) lib/abstract_controller/callbacks.rb:41:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>17, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/rescue.rb:22:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>18, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'"}, {"exception_object_id"=>70220712110480, "id"=>19, "trace"=>"activesupport (6.1.6) lib/active_support/notifications.rb:203:in `block in instrument'"}, {"exception_object_id"=>70220712110480, "id"=>20, "trace"=>"activesupport (6.1.6) lib/active_support/notifications/instrumenter.rb:24:in `instrument'"}, {"exception_object_id"=>70220712110480, "id"=>21, "trace"=>"activesupport (6.1.6) lib/active_support/notifications.rb:203:in `instrument'"}, {"exception_object_id"=>70220712110480, "id"=>22, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/instrumentation.rb:33:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>23, "trace"=>"actionpack (6.1.6) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>24, "trace"=>"activerecord (6.1.6) lib/active_record/railties/controller_runtime.rb:27:in `process_action'"}, {"exception_object_id"=>70220712110480, "id"=>25, "trace"=>"actionpack (6.1.6) lib/abstract_controller/base.rb:165:in `process'"}, {"exception_object_id"=>70220712110480, "id"=>26, "trace"=>"actionpack (6.1.6) lib/action_controller/metal.rb:190:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>27, "trace"=>"actionpack (6.1.6) lib/action_controller/metal.rb:254:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>28, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'"}, {"exception_object_id"=>70220712110480, "id"=>29, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:33:in `serve'"}, {"exception_object_id"=>70220712110480, "id"=>30, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'"}, {"exception_object_id"=>70220712110480, "id"=>31, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:32:in `each'"}, {"exception_object_id"=>70220712110480, "id"=>32, "trace"=>"actionpack (6.1.6) lib/action_dispatch/journey/router.rb:32:in `serve'"}, {"exception_object_id"=>70220712110480, "id"=>33, "trace"=>"actionpack (6.1.6) lib/action_dispatch/routing/route_set.rb:842:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>34, "trace"=>"rack (2.2.3) lib/rack/etag.rb:27:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>35, "trace"=>"rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>36, "trace"=>"rack (2.2.3) lib/rack/head.rb:12:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>37, "trace"=>"activerecord (6.1.6) lib/active_record/migration.rb:601:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>38, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'"}, {"exception_object_id"=>70220712110480, "id"=>39, "trace"=>"activesupport (6.1.6) lib/active_support/callbacks.rb:98:in `run_callbacks'"}, {"exception_object_id"=>70220712110480, "id"=>40, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>41, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>42, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>43, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>44, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>45, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:37:in `call_app'"}, {"exception_object_id"=>70220712110480, "id"=>46, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:26:in `block in call'"}, {"exception_object_id"=>70220712110480, "id"=>47, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'"}, {"exception_object_id"=>70220712110480, "id"=>48, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:37:in `tagged'"}, {"exception_object_id"=>70220712110480, "id"=>49, "trace"=>"activesupport (6.1.6) lib/active_support/tagged_logging.rb:99:in `tagged'"}, {"exception_object_id"=>70220712110480, "id"=>50, "trace"=>"railties (6.1.6) lib/rails/rack/logger.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>51, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>52, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>53, "trace"=>"rack (2.2.3) lib/rack/runtime.rb:22:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>54, "trace"=>"activesupport (6.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>55, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/executor.rb:14:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>56, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/static.rb:24:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>57, "trace"=>"rack (2.2.3) lib/rack/sendfile.rb:110:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>58, "trace"=>"actionpack (6.1.6) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>59, "trace"=>"rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>60, "trace"=>"railties (6.1.6) lib/rails/engine.rb:539:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>61, "trace"=>"puma (5.6.4) lib/puma/configuration.rb:252:in `call'"}, {"exception_object_id"=>70220712110480, "id"=>62, "trace"=>"puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'"}, {"exception_object_id"=>70220712110480, "id"=>63, "trace"=>"puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'"}, {"exception_object_id"=>70220712110480, "id"=>64, "trace"=>"puma (5.6.4) lib/puma/request.rb:76:in `handle_request'"}, {"exception_object_id"=>70220712110480, "id"=>65, "trace"=>"puma (5.6.4) lib/puma/server.rb:441:in `process_client'"}, {"exception_object_id"=>70220712110480, "id"=>66, "trace"=>"puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'"}]}}}, "user_id"=>"[object Object]"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 415)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 13:37:52 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.2ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 626)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:52:16 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 13:52:16 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 2.6ms | Allocations: 2904)
+
+
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 8.0ms | Allocations: 2907)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 13:52:48 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Nancy@test.com", "username"=>"Nancy"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Nancy@test.com"], ["username", "Nancy"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 41.6ms | Allocations: 5588)
+
+
+  
+NoMethodError (undefined method `rounds' for nil:NilClass):
+  
+app/serializers/user_serializer.rb:12:in `block in <class:UserSerializer>'
+app/controllers/api/v1/users_controller.rb:20:in `create'
+Started GET "/api/v1/users" for ::1 at 2022-06-13 13:52:48 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1370)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 14:09:34 -0400
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 14:09:34 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 4.5ms | Allocations: 2747)
+
+
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 7.4ms | Allocations: 732)
+
+
+Started POST "/api/v1/users" for ::1 at 2022-06-13 14:09:53 -0400
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"Olive@dog.com", "username"=>"Olive"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username") VALUES ($1, $2) RETURNING "id"[0m  [["email", "Olive@dog.com"], ["username", "Olive"]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `create'
+Completed 201 Created in 54ms (Views: 0.1ms | ActiveRecord: 43.0ms | Allocations: 2109)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 14:09:53 -0400
+Processing by Api::V1::UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1420)
+
+
+Started POST "/api/v1/users/[object%20Object]/rounds" for ::1 at 2022-06-13 14:10:59 -0400
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"round"=>{"title"=>"Lotto", "pick_one"=>"6", "pick_two"=>"5", "pick_three"=>"4", "pick_four"=>"3", "pick_five"=>"2", "pick_six"=>"1", "user_id"=>{"data"=>{"id"=>"16", "type"=>"user", "attributes"=>{"id"=>16, "email"=>"Olive@dog.com", "username"=>"Olive"}}}}, "user_id"=>"[object Object]"}
+Completed 404 Not Found in 6ms (ActiveRecord: 2.3ms | Allocations: 1361)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/api/v1/rounds_controller.rb:17:in `create'
+Started GET "/api/v1/rounds" for ::1 at 2022-06-13 14:10:59 -0400
+Processing by Api::V1::RoundsController#index as JSON
+  Parameters: {"round"=>{}}
+  [1m[36mRound Load (1.5ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 3.4ms | Allocations: 640)
+
+
+Started GET "/api/v1/users" for ::1 at 2022-06-13 14:20:11 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 10.6ms | Allocations: 6051)
+
+
