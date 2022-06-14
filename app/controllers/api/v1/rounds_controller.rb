@@ -19,8 +19,6 @@ class Api::V1::RoundsController < ApplicationController
     # is specifying this in route for belongs_to
     @user = User.find(params[:user_id])
     @round = @user.rounds.new(round_params)
-    # Stack Overflow
-    # @round = Round.new(:user_id => @user.id)
    
     if @round.save
       render json: RoundSerializer.new(@round).serializable_hash.to_json, 
@@ -52,14 +50,12 @@ class Api::V1::RoundsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def round_params
-    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six, user_attributes: [:id], user_round_attributes: [:user_id])
+    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six, user_attributes: [:id])
   end
 
 end
 
 
 
-# options = {include: [:user_rounds]}
-
-# , user_round_attributes: [:user_id]
-
+# Stack Overflow
+# @round = Round.new(:user_id => @user.id)
