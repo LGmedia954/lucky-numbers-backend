@@ -14,7 +14,10 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
+    # byebug
+    # User.find(params[:user_id]) because rails routes
+    # is specifying this in route for belongs_to
+    @user = User.find(params[:user_id])
     @round = @user.rounds.new(round_params)
     # Stack Overflow
     # @round = Round.new(:user_id => @user.id)
