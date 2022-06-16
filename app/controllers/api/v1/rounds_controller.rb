@@ -8,6 +8,7 @@ class Api::V1::RoundsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @round = Round.find(params[:id])
    
     render json: @round

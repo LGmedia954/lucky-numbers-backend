@@ -10,8 +10,4 @@ class RoundSerializer
     params[:id] ? round.id : "#{round.id}"
   end
 
-  link :personalized_url do |round, params|
-    "http://localhost:3000/api/v1/users/#{user.id}/rounds/#{round.id}"
-  end
-
 end
