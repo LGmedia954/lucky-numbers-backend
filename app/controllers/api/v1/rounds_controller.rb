@@ -51,7 +51,7 @@ class Api::V1::RoundsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def round_params
-    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six, user_attributes: [:id])
+    params.require(:round).permit(:id, :title, :pick_one, :pick_two, :pick_three, :pick_four, :pick_five, :pick_six, user_attributes: [:id], user_round_attributes: [:user_id])
   end
 
 end
