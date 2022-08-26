@@ -5,8 +5,6 @@ class RoundSerializer
   belongs_to :user, if: Proc.new { |round, params| params && params[:id] == true }
 
   set_id do |round, params|
-    # in here, params is a hash containing the `:admin` key
-    # params[:admin] ? movie.owner_id : "movie-#{movie.id}"
     params[:id] ? round.id : "#{round.id}"
   end
 
